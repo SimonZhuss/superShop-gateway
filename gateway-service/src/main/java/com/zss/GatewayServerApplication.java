@@ -2,6 +2,7 @@
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
@@ -12,7 +13,8 @@ import com.zss.gateway.config.RouteFilter;
 
 @SpringBootApplication
 @EnableEurekaClient
-@EnableZuulProxy
+//@EnableZuulProxy
+@EnableConfigServer
 public class GatewayServerApplication {
 
 	public static void main(String[] args) {
@@ -20,7 +22,7 @@ public class GatewayServerApplication {
 	}
 	
 	// 配置过滤器,可以配置多个过滤器
-	@Bean
+	/*@Bean
 	public PreFilter preFilter() {
 		return new PreFilter();
 	}
@@ -33,5 +35,5 @@ public class GatewayServerApplication {
 	@Bean
 	public PostFilter postFilter() {
 		return new PostFilter();
-	}
+	}*/
 }
